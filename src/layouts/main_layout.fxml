@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <AnchorPane prefHeight="86.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="label_history" prefHeight="30.0" prefWidth="400.0">
+                    <font>
+                        <Font name="Consolas Italic" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="label_equation" prefHeight="56.0" prefWidth="400.0" style="-fx-background-color: #000000;" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <font>
+                        <Font name="Consolas" size="24.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="label_correctness" layoutX="349.0" layoutY="32.0" text="CORRECT" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                    <padding>
+                        <Insets right="3.0" top="3.0" />
+                    </padding>
+                    <font>
+                        <Font name="JetBrains Mono Medium Italic" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="0.5" layoutY="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #FFC107;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="86.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="257.0" minWidth="0.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="326.0" minWidth="0.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="297.0" minWidth="0.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="297.0" minWidth="0.0" prefWidth="106.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ImageView fx:id="iV_factorial" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onFactorialClick" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <image>
+                        <Image url="@../resources/factorial.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_left_parenthesis" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onLeftParenthesisClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <image>
+                        <Image url="@../resources/left_parenthesis.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_right_parenthesis" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onRightParenthesisClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <image>
+                        <Image url="@../resources/right_parenthesis.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_delete_one_char" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onDeleteOneCharClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <image>
+                        <Image url="@../resources/delete_one_char.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_modulo" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onModuloClick" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../resources/modulo.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iv_nth_root" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onTakeNthRootClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../resources/nth_root.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_exponentiation" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onRaiseToPowerClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../resources/exponent.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_division" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onDivideClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../resources/division.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_dot" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onDotClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                    <image>
+                        <Image url="@../resources/dot.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="id_calculate" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onCalculateClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                    <image>
+                        <Image url="@../resources/education.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_addition" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onAddClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                    <image>
+                        <Image url="@../resources/plus.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_multiplication" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onMultiplyClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@../resources/multiply.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_clean_equation" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onClearClick" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+                    <image>
+                        <Image url="@../resources/c_letter.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iV_subtraction" fitHeight="36.0" fitWidth="36.0" onMouseClicked="#onSubtractClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                    <image>
+                        <Image url="@../resources/minus.png" />
+                    </image>
+                </ImageView>
+                <Text fx:id="text_seven" onMouseClicked="#onSevenClick" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER" wrappingWidth="100.0" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_eight" onMouseClicked="#onEightClick" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_nine" onMouseClicked="#onNineClick" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_four" onMouseClicked="#onFourClick" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER" wrappingWidth="100.0" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_five" onMouseClicked="#onFiveClick" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_six" onMouseClicked="#onSixClick" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_one" onMouseClicked="#onOneClick" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="100.0" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_two" onMouseClicked="#onTwoClick" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_three" onMouseClicked="#onThreeClick" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+                <Text fx:id="text_zero" onMouseClicked="#onZeroClick" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <font>
+                        <Font name="Consolas" size="48.0" />
+                    </font>
+                </Text>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
