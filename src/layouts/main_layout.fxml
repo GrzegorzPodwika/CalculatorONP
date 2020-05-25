@@ -23,7 +23,7 @@
                         <Insets left="10.0" />
                     </padding>
                 </Label>
-                <Label fx:id="label_equation" prefHeight="56.0" prefWidth="400.0" style="-fx-background-color: #000000;" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <Label fx:id="label_equation" prefHeight="56.0" prefWidth="400.0" style="-fx-background-color: #191970;" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <font>
                         <Font name="Consolas" size="24.0" />
                     </font>

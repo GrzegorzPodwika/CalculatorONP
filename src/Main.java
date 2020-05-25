@@ -10,7 +10,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("layouts/main_layout.fxml"));
         Parent root = loader.load();
-
         primaryStage.setTitle("Kalkulator ONP");
         primaryStage.setScene(new Scene(root));
 

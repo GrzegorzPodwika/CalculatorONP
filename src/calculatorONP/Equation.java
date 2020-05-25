@@ -2,6 +2,11 @@ package calculatorONP;
 
 import java.io.Serializable;
 
+/**
+ * @author Grzegorz Podwika
+ * Serializable class ilustrating equation
+ * and constisting infix, postfix equation and result of equation as fields.
+ */
 public class Equation implements Serializable {
 
     public static final String fileName = ".\\equation.dt";

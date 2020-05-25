@@ -280,7 +280,7 @@ public class MainController {
 
     private void checkTheCorrectnessOfEquation() {
         boolean isCorrectEquation = calculatorONP.isTheEquationCorrect(equationBuilder.toString());
-
+        
         if (isCorrectEquation)
             label_correctness.setText("CORRECT");
         else

@@ -5,6 +5,8 @@ import operators.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * @author Grzegorz Podwika
@@ -19,23 +21,24 @@ public class CalculatorONP {
 
     /**
      * Public method calculates given equation in Infix Notation.
+     * I use here functional interface Function.
      * @param infixEquation given equation in Infix Notation
      * @return result of the equation or ERROR_MESSAGE if equation is incorrect.
      */
-    public String calculateInfixEquation(String infixEquation){
+    public String calculateInfixEquation(String infixEquation) {
         equation.clearFields();
         equation.setInfixEquation(infixEquation);
+        Function<Double, String> doubleToString = String::valueOf;
 
         String postfixEquation = convertToPostfix(infixEquation);
         equation.setPostfixEquation(postfixEquation);
 
-        if (!postfixEquation.equals(ERROR_MESSAGE)){
+        if (!postfixEquation.equals(ERROR_MESSAGE)) {
             double result = calculatePostfixEquation(postfixEquation);
             equation.setResult(result);
             saveEquationToFile();
-            return String.valueOf(result);
-        }
-        else
+            return doubleToString.apply(result);
+        } else
             return ERROR_MESSAGE;
     }
 
@@ -131,6 +134,7 @@ public class CalculatorONP {
 
     /**
      * Method checks if the given infixEquation is correct on a few ways.
+     *
      * @param infixEquation given equation to check
      * @return true if is correct, false otherwise.
      */
@@ -141,6 +145,11 @@ public class CalculatorONP {
 
         // empty string
         if (infixEquation.equals("")) {
+            return false;
+        }
+
+        // +7, *4 error
+        if (!isDigit(infixEquation.charAt(0)) && infixEquation.charAt(0) != '('){
             return false;
         }
 
@@ -193,17 +202,17 @@ public class CalculatorONP {
 
     /**
      * Method calculates given equation in Postfix Notation.
+     *
      * @param postfixEquation given equation in Postfix Notation
      * @return result of the equation
      */
     private double calculatePostfixEquation(String postfixEquation) {
         double result = 0.0;
-        Double a = 0.0;
-        Double b = 0.0;
+        Double a;
+        Double b;
         StringBuilder tmp = new StringBuilder();
-        char currentChar = '0';
-        char nextChar = '0';
-        boolean isLastChar = false;
+        char currentChar;
+        char nextChar;
 
         for (int i = 0; i < postfixEquation.length(); i++) {
             currentChar = postfixEquation.charAt(i);
@@ -283,9 +292,9 @@ public class CalculatorONP {
     /**
      * Method saves Equation to file. It consists infix, postfix equations and result of the operation.
      */
-    public void saveEquationToFile(){
+    public void saveEquationToFile() {
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(Equation.fileName,true));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(Equation.fileName, true));
             out.writeObject(equation);
             out.close();
         } catch (IOException e) {
@@ -295,6 +304,7 @@ public class CalculatorONP {
 
     /**
      * Method calculates factorial of given number
+     *
      * @param number given number to calculate
      * @return result of the factorial operation
      */
